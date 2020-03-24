@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="./js/app.js" type="module" defer></script>
   <title>Paint App</title>
 </head>
 <body>
@@ -16,11 +17,131 @@
       </div>
     </div>
     <div id="Container">
-      <div class="colors"></div>
-      <div class="tools"></div>
+      <div class="colorbox">
+        <div class=" group swatches">
+          <div class="item">
+            <div class="swatch" style="border: none;"></div>
+          </div>
+          <div class="item active" data-swatch="#000" title="Black">
+            <div class="swatch" style="background-color: #000;"></div>
+          </div>
+          <div class="item" data-swatch="#777" title="Dark Gray">
+            <div class="swatch" style="background-color: #777;"></div>
+          </div>
+          <div class="item" data-swatch="#AAA" title="Gray">
+            <div class="swatch" style="background-color: #AAA;"></div>
+          </div>
+          <div class="item" data-swatch="#654321" title="Brown">
+            <div class="swatch" style="background-color: #654321;"></div>
+          </div>
+          <div class="item" data-swatch="#F00" title="Red">
+            <div class="swatch" style="background-color: #F00;"></div>
+          </div>
+          <div class="item" data-swatch="#900" title="Crisom Red">
+            <div class="swatch" style="background-color: #900;"></div>
+          </div>
+          <div class="item" data-swatch="#551A8B" title="Purple">
+            <div class="swatch" style="background-color: #551A8B;"></div>
+          </div>
+          <div class="item" data-swatch="#00F" title="Blue">
+            <div class="swatch" style="background-color: #00F;"></div>
+          </div>
+          <div class="item" data-swatch="#40E0D0" title="Turquoise">
+            <div class="swatch" style="background-color: #40E0D0;"></div>
+          </div>
+          <div class="item" data-swatch="#0F0" title="Green">
+            <div class="swatch" style="background-color: #0F0;"></div>
+          </div>
+          <div class="item" data-swatch="#0A0" title="Lime Green">
+            <div class="swatch" style="background-color: #0A0;"></div>
+          </div>
+          <div class="item" data-swatch="#070" title="Dark Lime Green">
+            <div class="swatch" style="background-color: #070;"></div>
+          </div>
+          <div class="item" data-swatch="#FF0" title="Yellow">
+            <div class="swatch" style="background-color: #FF0;"></div>
+          </div>
+          <div class="item" data-swatch="#321" title="Dark Orange">
+            <div class="swatch" style="background-color: #321;"></div>
+          </div>
+          <div class="item" data-swatch="#0FF" title="Cyan">
+            <div class="swatch" style="background-color: #0FF;"></div>
+          </div>
+          <div class="item" data-swatch="#F0F" title="Magenta">
+            <div class="swatch" style="background-color: #F0F;"></div>
+          </div>
+          <div class="item" data-swatch="#F5F" title="Light Magenta">
+            <div class="swatch" style="background-color: #F5F;"></div>
+          </div>
+          <div class="item" data-swatch="#FFF" title="White">
+            <div class="swatch" style="background-color: #FFF;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="toolbox">
+        <center>
+          <div class="group commands">
+            <div class="item" data-commands="undo">
+              <i class="ico fas fa-undo-alt" title="Undo"></i>
+            </div>
+            <div class="item" data-commands="redo">
+              <i class="ico fas fa-redo-alt" title="Redo"></i>
+            </div>
+          </div>
+          <hr />
+          <div class="group tools">
+            <div class="item" data-tools="brush">
+              <i class="ico fas fa-paint-brush" title="Brush"></i>
+            </div>
+            <div class="item" data-tools="eraser">
+              <i class="ico fas fa-eraser" title="Eraser"></i>
+            </div>
+            <div class="item active" data-tools="pencil">
+              <i class="ico fas fa-pencil-alt" title="Pencil"></i>
+            </div>
+            <div class="item" data-tools="fill">
+              <i class="ico fas fa-fill-drip" title="Fill"></i>
+            </div>
+          </div>
+          <hr />
+          <div class="group shapes">
+            <div class="item active" data-shapes="line">
+              <i class="ico far fa-window-minimize" id="line" title="Line"></i>
+            </div>
+            <div class="item" data-shapes="square">
+              <i class="ico far fa-square" title="Square"></i>
+            </div>
+            <div class="item" data-shapes="circle">
+              <i class="ico far fa-circle" title="Circle"></i>
+            </div>
+            <div class="item" data-shapes="triangle">
+              <i class="ico fas fa-play" title="Triangle" style="transform: rotate(-90deg);"></i>
+          </div>
+        </div>
+        <hr />
+          <div class="group linewidth">
+            <div class="item" data-linewidth="small">
+              <i class="ico fas fa-circle" style="font-size: 5px;" title="Small"></i>
+            </div>
+            <div class="item active" data-linewidth="regular">
+              <i class="ico fas fa-circle" style="font-size: 10px;" title="Regular"></i>
+            </div>
+            <div class="item" data-linewidth="medium">
+              <i class="ico fas fa-circle" style="font-size: 15px;" title="Medium"></i>
+            </div>
+            <div class="item" data-linewidth="large">
+              <i class="ico fas fa-circle" style="font-size: 20px;" title="Large"></i>
+            </div>
+          </div>
+        </center>
+      </div>
       <canvas id="canvas"></canvas>
     </div>
-    <div id="Footer"></div>
+    <div id="Footer">
+    </div>
   </div>
+
+
+  <script src="https://kit.fontawesome.com/c1d28c00bc.js" crossorigin="anonymous"></script>
 </body>
 </html>

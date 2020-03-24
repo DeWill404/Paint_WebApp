@@ -16,6 +16,7 @@ body {
   background-color: rgba(80, 80, 80, 1);
 }
 
+
 #Header {
   padding: 1%;
 }
@@ -27,22 +28,62 @@ body {
   float: right;
 }
 
+
 #Container {
   height: 500px;
   box-sizing: border-box;
 }
-.tools, #canvas, .colors {
+
+.toolbox, #canvas, .colorbox {
   display: inline-block;
+  box-sizing: border-box;
 }
-.tools {
+
+.toolbox {
   background-color: gray;
   width: 40px;
   height: 435px;
   position: relative;
   left: 10px;
-  top: 12px;
+  top: 11px;
   border-radius: 0px 0px 0px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
+hr {
+  height: 3px;
+  width: 30px;
+  margin: 5px auto;
+  background-color: white;
+  border: 1px white ;
+  border-radius: 5px;
+}
+
+.group {
+  margin: 5px 2px;
+}
+
+.item {
+  border-radius: 3px;
+}
+
+#line {
+  transform: rotate(-90deg);
+  position: relative;
+  right: 4px;
+  padding: 0px 0px 15px 0px;
+}
+
+.ico {
+  margin: 3px;
+  font-size: 23px;
+}
+.item:hover, .item.active {
+  background-color: rgba(160, 160, 160, 0.5);
+  color: white;
+}
+
 #canvas {
   background-color: white;
   width: 1200px;
@@ -52,15 +93,38 @@ body {
   left: 10px;
   bottom: -11px;
 }
-.colors {
+
+.colorbox {
   background-color: gray;
   width: 98.4%;
   height: 40px;
+  margin-bottom: 5px;
   position: relative;
   left: 10px;
   top: 10px;
   border-radius: 20px 20px 0px 0px;
 }
+
+.swatches {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+}
+
+.swatches .item {
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.swatch {
+  border: 2px solid white;
+  margin: 4px auto;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+
 
 #Footer {
   height: 40px;
