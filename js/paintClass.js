@@ -1,6 +1,5 @@
-import { SHAPE_LINE, SHAPE_RECTANGLE, SHAPE_CIRCLE, SHAPE_TRIANGLE, TOOL_PENCIL, TOOL_BRUSH, TOOL_FILL, TOOL_ERASER} from "./tool.js";
+import { TOOL_LINE, TOOL_RECTANGLE, TOOL_CIRCLE, TOOL_TRIANGLE, TOOL_PENCIL, TOOL_BRUSH, TOOL_FILL, TOOL_ERASER} from "./tool.js";
 import { getMouseCoordinatesCanvas } from "./utility.js";
-import Point from "./point_model.js";
 
 export default class Paint {
 
@@ -13,7 +12,6 @@ export default class Paint {
 
   set activeTool(tool) {
     this.tool = tool;
-    console.log(this.tool)
   }
 
   init() {
@@ -22,24 +20,44 @@ export default class Paint {
 
   onMouseDown(e) {
 
+    this.saveData = this.context.getImageData(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+
+
     this.canvas.onmousemove = e => this.onMouseMove(e);
     document.onmouseup = e => this.onMouseUp(e);
 
     this.startPos = getMouseCoordinatesCanvas(e, this.canvas);
     console.log(this.startPos);
 
-
   }
 
   onMouseMove(e) {
 
-    this.startPos = getMouseCoordinatesCanvas(e, this.canvas);
-    console.log(this.startPos);
-    // console.log(e.clientX, e.clientY);
+    this.currentPos = getMouseCoordinatesCanvas(e, this.canvas);
+    console.log(this.currentPos);
+
+    switch (this.tool) {
+      case  TOOL_LINE:
+        this.drawShape();
+        break;
+      default:
+        break;
+    }
+
   }
 
   onMouseUp(e) {
     this.canvas.onmousemove = null;
     document.onmouseup = null;
+  }
+
+  drawShape() {
+
+    this.context.putImageData(this.saveData, 0, 0);
+
+    this.context.beginPath();
+    this.context.moveTo(this.startPos.x, this.startPos.y);
+    this.context.lineTo(this.currentPos.x, this.currentPos.y);
+    this.context.stroke();
   }
 }

@@ -1,11 +1,11 @@
-import { SHAPE_LINE, SHAPE_RECTANGLE, SHAPE_CIRCLE, SHAPE_TRIANGLE, TOOL_PENCIL, TOOL_BRUSH, TOOL_FILL, TOOL_ERASER} from "./tool.js";
+import { TOOL_LINE, TOOL_RECTANGLE, TOOL_CIRCLE, TOOL_TRIANGLE, TOOL_PENCIL, TOOL_BRUSH, TOOL_FILL, TOOL_ERASER} from "./tool.js";
 import Paint from "./paintClass.js";
 import Point from "./point_model.js";
 import { getMouseCoordinatesCanvas } from "./utility.js";
 
 
 var paint = new Paint("canvas");
-paint.activeTool = SHAPE_LINE;
+paint.activeTool = TOOL_LINE;
 paint.init();
 
 // Creating Event Listener and Toggle Active listener
