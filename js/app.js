@@ -6,6 +6,8 @@ import { getMouseCoordinatesCanvas } from "./utility.js";
 
 var paint = new Paint("canvas");
 paint.activeTool = TOOL_LINE;
+paint.lineWidth = 2;
+paint.selectColor = "#000";
 paint.init();
 
 // Creating Event Listener and Toggle Active listener
@@ -37,7 +39,6 @@ document.querySelectorAll("[data-shapes]").forEach(
 
       document.querySelector("[data-shapes].active").classList.toggle("active");
       item.classList.toggle("active");
-      console.log(item.getAttribute("data-shapes"));
 
     });
   }
@@ -48,7 +49,9 @@ document.querySelectorAll("[data-linewidth]").forEach(
 
       document.querySelector("[data-linewidth].active").classList.toggle("active");
       item.classList.toggle("active");
-      console.log(item.getAttribute("data-linewidth"));
+
+      let linewidth = item.getAttribute("data-linewidth");
+      paint.lineWidth = linewidth;
 
     });
   }
@@ -59,7 +62,9 @@ document.querySelectorAll("[data-swatch]").forEach(
 
       document.querySelector("[data-swatch].active").classList.toggle("active");
       item.classList.toggle("active");
-      console.log(item.getAttribute("data-swatch"));
+
+      let color = item.getAttribute("data-swatch");
+      paint.selectColor = color;
 
     });
   }
