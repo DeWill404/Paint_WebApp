@@ -18,14 +18,17 @@ body {
 
 
 #Header {
-  padding: 1%;
+  width: 200px;
+  margin: auto;
+  padding: 12px;
+  text-align: center;
 }
-#Header div {
-  display: inline-block;
-  margin: 2px;
-}
-.links {
-  float: right;
+.logo {
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 1.9em;
+  font-weight: bolder;
+  color: wheat;
 }
 
 
@@ -140,4 +143,14 @@ hr {
 
 #Footer {
   height: 40px;
+  text-align: center;
+  padding-top: 6px;
+}
+.dow :hover {
+  width: 200px;
+  margin: auto;
+  border-radius: 25px;
+  background-color: rgba(160, 160, 160, 0.5);
+  color: white;
+  padding: 4px;
 }
