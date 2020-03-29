@@ -1,5 +1,6 @@
 import { TOOL_LINE, TOOL_RECTANGLE, TOOL_CIRCLE, TOOL_TRIANGLE, TOOL_PENCIL, TOOL_BRUSH, TOOL_FILL, TOOL_ERASER} from "./tool.js";
 import { getMouseCoordinatesCanvas, findDistance } from "./utility.js";
+import Fill from "./fill-class.js";
 
 export default class Paint {
 
@@ -41,6 +42,8 @@ export default class Paint {
     if (this.tool == TOOL_PENCIL || this.tool == TOOL_BRUSH) {
       this.context.beginPath();
       this.context.moveTo(this.startPos.x, this.startPos.y);
+    } else if (this.tool == TOOL_FILL) {
+      new Fill(this.canvas, this.startPos, this.color);
     }
   }
 

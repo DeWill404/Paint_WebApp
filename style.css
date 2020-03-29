@@ -83,6 +83,9 @@ hr {
   background-color: rgba(160, 160, 160, 0.5);
   color: white;
 }
+.swatch:hover, .item.active {
+  border-color: black;
+}
 
 #canvas {
   background-color: white;

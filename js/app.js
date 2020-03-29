@@ -7,7 +7,7 @@ import { getMouseCoordinatesCanvas } from "./utility.js";
 var paint = new Paint("canvas");
 paint.activeTool = TOOL_LINE;
 paint.lineWidth = 2;
-paint.selectColor = "#000";
+paint.selectColor = "#000000";
 paint.init();
 
 // Creating Event Listener and Toggle Active listener
@@ -29,16 +29,6 @@ document.querySelectorAll("[data-tools]").forEach(
 
       let selectedTool = item.getAttribute("data-tools");
       paint.activeTool = selectedTool;
-
-    });
-  }
-);
-document.querySelectorAll("[data-shapes]").forEach(
-  item => {
-    item.addEventListener("click", e => {
-
-      document.querySelector("[data-shapes].active").classList.toggle("active");
-      item.classList.toggle("active");
 
     });
   }
